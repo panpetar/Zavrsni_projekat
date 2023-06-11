@@ -36,13 +36,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/houses/create', [HouseController::class,'create'])->name('houses.create');
     Route::post('/houses/store', [HouseController::class,'store'])->name('houses.store');
     Route::get('/houses/{product}', [HouseController::class,'show'])->name('houses.show');
-    // Route::get('/houses/{product}', [HouseController::class,'edit'])->name('houses.edit');
-    // Route::put('/houses/{product}', [HouseController::class,'update'])->name('houses.update');
+    Route::get('/houses/edit/{product}', [HouseController::class,'edit'])->name('houses.edit');
+    Route::put('/houses/{product}', [HouseController::class,'update'])->name('houses.update');
     Route::delete('/houses/{product}', [HouseController::class,'destroy'])->name('houses.destroy');
 
 
     // SNOWMEN
     Route::get('/snowmen', [SnowmenController::class,'index'])->name('snowmen.index');
+    Route::get('/snowmen/create', [SnowmenController::class,'create'])->name('snowmen.create');
+    Route::post('/snowmen/store', [SnowmenController::class,'store'])->name('snowmen.store');
+    Route::get('/snowmen/{product}', [SnowmenController::class,'show'])->name('snowmen.show');
+    Route::get('/snowmen/edit/{product}', [SnowmenController::class,'edit'])->name('snowmen.edit');
+    Route::put('/snowmen/{product}', [SnowmenController::class,'update'])->name('snowmen.update');
+    Route::delete('/snowmen/{product}', [SnowmenController::class,'destroy'])->name('snowmen.destroy');
 });
 
 
